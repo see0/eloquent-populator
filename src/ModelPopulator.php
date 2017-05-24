@@ -167,7 +167,7 @@ class ModelPopulator
                     'belongsToMany',
                     'morphedByMany',
                 ])->contains(function ($relationName) use ($methodCode) {
-                    return stripos($methodCode, "\$this->$relationName(");
+                    return stripos($methodCode, "\\$this->$relationName(");
                 });
             })
             ->map(function ($methodName) {
